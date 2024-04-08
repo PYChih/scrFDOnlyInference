@@ -21,9 +21,9 @@ def representative_dataset(netin_height, netin_width):
         netin = scrfd_preprocess(image, imshape=(netin_height, netin_width), expand=True, from_cv2=True)
         yield [netin]
 
-#def representative_dataset():
+#def representative_dataset(netin_height, netin_width):
 #    for i in range(10):
-#        val = np.random.randn(1, 640, 640, 3).astype(np.float32)
+#        val = np.random.randn(1, netin_height, netin_width, 3).astype(np.float32)
 #        yield [val]
 
 def scrfd_preprocess(image, imshape=(320, 320), expand=True, from_cv2=True):

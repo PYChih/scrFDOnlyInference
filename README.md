@@ -13,10 +13,15 @@
 - and: [netron](https://github.com/lutzroeder/netron)
 ## Only Inference
 - tensorflow==2.12.1
-- python-opencv
+- opencv-python==4.9.0.80
 ## Model analysis
-- same as the tool: tflite2json2tflite
+- see: [tflite2json2tflite](https://github.com/PINTO0309/tflite2json2tflite)
 ## Evaluation and Error Analysis
+- see: [WiderFace-Evaluation](https://github.com/wondervictor/WiderFace-Evaluation)
+# Quick Start:
+- `python scrfd.py`
+
+![image](results/friends_result.jpg)
 
 # Step by step
 ## Export TFLite Models
@@ -41,7 +46,7 @@
   - `netron models/scrfd500m_480x640_float32.tflite`
 
 # TODO:
-- [ ] convert(export) official insight's scrfd onnx models to tflite(int/float) format with various input shape
+- [x] convert(export) official insight's scrfd onnx models to tflite(int/float) format with various input shape
 - [ ] decode netout and image/video inference
 - [ ] flops and input_shape table
 - [ ] fix quantized error in tflite(int) format

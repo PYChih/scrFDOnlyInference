@@ -1,6 +1,6 @@
 # data files
 data/*.zip
-data/**/*.jpg
+data/WIDER_val/**/*.jpg
 data/**/*.txt
 data/**/*.mat
 
