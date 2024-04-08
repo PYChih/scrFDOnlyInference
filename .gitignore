@@ -1,3 +1,16 @@
+# data files
+data/*.zip
+data/**/*.jpg
+data/**/*.txt
+data/**/*.mat
+
+# model files
+models/*.zip
+models/*.onnx
+models/saved_model*/*
+models/*_int8.tflite
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
