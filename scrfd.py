@@ -445,7 +445,7 @@ if __name__ == "__main__":
     ## model initial
     fd = ScrfdFaceDetector(int=False, conf_thr=0.5, iou_thr=0.3, debug=True)
     ## data initial
-    image_path = os.path.join("data", "example_images", "friends.jpg")
+    image_path = os.path.join("data", "example", "friends.jpg")
     image = cv2.imread(image_path)
     im2show = image.copy()
 

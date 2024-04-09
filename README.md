@@ -20,9 +20,10 @@
 - see: [WiderFace-Evaluation](https://github.com/wondervictor/WiderFace-Evaluation)
 # Quick Start:
 - `python scrfd.py`
-
 ![image](results/friends_result.jpg)
 
+- `python video_inference_fdlm.py`
+[![result](data/result/FatBoyGang.png)](data/result/sub_MUTA-FatBoyGang_result.mp4)
 # Step by step
 ## Export TFLite Models
 - download official onnx models from [here](https://github.com/deepinsight/insightface/releases)
@@ -44,14 +45,19 @@
 - using the awesome tool: netron to visualize the result tflite file
   - in our example case, it will be: scrfd500m_480x640_float32.tflite
   - `netron models/scrfd500m_480x640_float32.tflite`
-
+# Metrics
+| Model name  | Input shape | FLOPs | Easy Set | Medium Set | Hard Set |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| scrfd500m  | 480x640 | 1.113 G | | | |
+| scrfd500m  | 256x320 | 296.758 M| | | |
+| scrfd500m  | 128x160 | 74.189 M | | | |
 # TODO:
 - [x] convert(export) official insight's scrfd onnx models to tflite(int/float) format with various input shape
-- [ ] decode netout and image/video inference
-- [ ] flops and input_shape table
+- [x] decode netout and image/video inference
+- [x] flops and input_shape table
+- [ ] evaluation on widerface
 - [ ] fix quantized error in tflite(int) format
 - [ ] speed test
-- [ ] evaluation on widerface
 - [ ] error analysis
 
 # Reference:
