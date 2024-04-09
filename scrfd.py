@@ -457,5 +457,5 @@ if __name__ == "__main__":
     key = cv2.waitKey(0)
     if key == ord('s'):
         image_name = os.path.basename(image_path).strip(".jpg")
-        cv2.imwrite(os.path.join("results", image_name + "_result.jpg"), im2show)
+        cv2.imwrite(os.path.join("data", "results", image_name + "_result.jpg"), im2show)
     cv2.destroyAllWindows()
