@@ -20,7 +20,7 @@
 - see: [WiderFace-Evaluation](https://github.com/wondervictor/WiderFace-Evaluation)
 # Quick Start:
 - `python scrfd.py`  
-![image](data/results/friends_result.jpg)
+![image](data/result/friends_result.jpg)
 
 - `python video_inference_fdlm.py`
 [![result](data/result/FatBoyGang.png)](data/result/sub_MUTA-FatBoyGang_result.mp4)
