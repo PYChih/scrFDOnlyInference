@@ -14,7 +14,10 @@ DEBUG_INFO=False
 
 SAVE_VIDEO = True
 OUTPUT_VIDEO_DIR = os.path.join("data", "result")
-OUTPUT_VIDEO_NAME = os.path.basename(VIDEO_SOURCE).strip(".mp4") + "_result.mp4"
+if isinstance(VIDEO_SOURCE, int):
+    OUTPUT_VIDEO_NAME = os.path.basename(str(VIDEO_SOURCE)).strip(".mp4") + "_result.mp4"
+else:
+    OUTPUT_VIDEO_NAME = os.path.basename(VIDEO_SOURCE).strip(".mp4") + "_result.mp4"
 os.makedirs(OUTPUT_VIDEO_DIR, exist_ok=True)
 OUTPUT_VIDEO_FILEPATH = os.path.join(OUTPUT_VIDEO_DIR, OUTPUT_VIDEO_NAME)
 OUTPUT_IMAGE_BASENAME = 'test'  # press 's' to save
