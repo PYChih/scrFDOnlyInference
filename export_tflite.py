@@ -3,6 +3,8 @@ scrfd_500m_640x640: Estimated count of arithmetic ops: 1.484 G  ops, equivalentl
 scrfd_500m_480x640: Estimated count of arithmetic ops: 1.113 G  ops, equivalently 0.556 G  MACs
 scrfd_500m_256_320: Estimated count of arithmetic ops: 296.758 M  ops, equivalently 148.379 M  MACs
 scrfd_500m_128_160: Estimated count of arithmetic ops: 74.189 M  ops, equivalently 37.095 M  MACs
+-----
+blink_32x32x1: Estimated count of arithmetic ops: 1.411 M  ops
 """
 import argparse
 import os
@@ -79,6 +81,9 @@ if __name__ == "__main__":
         tflite_filepath = os.path.join(args.dest_dir, tflite_filename)
     else:
         tflite_filename = f"scrfd500m_{shape_suffix}float32.tflite"
+        #####
+        tflite_filename = f"blink_32x32x3_float32.tflite"
+        #####
         tflite_filepath = os.path.join(args.dest_dir, tflite_filename)
     print("write result to: " + tflite_filepath)
     converter = tf.lite.TFLiteConverter.from_saved_model(model_dir)

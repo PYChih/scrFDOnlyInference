@@ -67,3 +67,11 @@
 - [\[github\]WiderFace-Evaluation](https://github.com/wondervictor/WiderFace-Evaluation)
 - [\[dataset\]WIDER Face](http://shuoyang1213.me/WIDERFACE/)
 
+---
+# Blink Task
+1. download blink model from: [here](https://docs.openvino.ai/2022.3/omz_models_model_open_closed_eye_0001.html)
+  - result is an onnx files in models/blink/open-closed-eye.onnx
+2. export to tensorflow saved_model with signaturedefs added using the awesome tool: onnx2tf
+  - `onnx2tf -i models/blink/open-closed-eye.onnx -o models/blink/open-closed-eye -osd`
+3. convert exported blink model to tflite-float
+  - `python export_tflite.py 
