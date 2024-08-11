@@ -97,8 +97,9 @@ class ScrfdFaceDetector(object):
         # load tflite model
         if int:
             #self.model_path = os.path.join("models", "scrfd500m_128x160_int8.tflite")  # 128 x 160
-            #self.model_path = os.path.join("models", "scrfd500m_256x320_int8.tflite")  # 256 x 320
-            self.model_path = os.path.join("models", "scrfd500m_480x640_int8.tflite")  # 480 x 640
+            #self.model_path = os.path.join("models", "scrfd500m_256_320_int8.tflite")
+            self.model_path = os.path.join("models", "quantize_fix", "scrfd500m_256_320_int8.tflite")  # 256 x 320
+            #self.model_path = os.path.join("models", "quantize_fix", "scrfd500m_128_160_int8.tflite")  # 128 x 160
         else:
             #self.model_path = os.path.join("models", "scrfd500m_128x160_float32.tflite")  # 128 x 160
             #self.model_path = os.path.join("models", "scrfd500m_256x320_float32.tflite")  # 256 x 320
@@ -443,7 +444,9 @@ if __name__ == "__main__":
     # Simple usage example:
     # Except usage: python scrfd.py
     ## model initial
-    fd = ScrfdFaceDetector(int=False, conf_thr=0.5, iou_thr=0.3, debug=True)
+    INT = True
+    CONF = 0.3
+    fd = ScrfdFaceDetector(int=INT, conf_thr=CONF, iou_thr=0.3, debug=True)
     ## data initial
     image_path = os.path.join("data", "example", "friends.jpg")
     image = cv2.imread(image_path)

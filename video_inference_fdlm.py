@@ -5,14 +5,14 @@ import cv2
 
 from scrfd import ScrfdFaceDetector
 
-#VIDEO_SOURCE = 0  # webcam
-VIDEO_SOURCE = os.path.join("data", "example", "sub_MUTA-FatBoyGang.mp4")
+VIDEO_SOURCE = 0  # webcam
+#VIDEO_SOURCE = os.path.join("data", "example", "sub_MUTA-FatBoyGang.mp4")
 
 
-INT = False
+INT = True
 DEBUG_INFO=False
 
-SAVE_VIDEO = True
+SAVE_VIDEO = False
 OUTPUT_VIDEO_DIR = os.path.join("data", "result")
 if isinstance(VIDEO_SOURCE, int):
     OUTPUT_VIDEO_NAME = os.path.basename(str(VIDEO_SOURCE)).strip(".mp4") + "_result.mp4"
@@ -42,7 +42,7 @@ SAVE_IMAGE_CNT = 0  # count for many times image save
 
 if __name__ == "__main__":
     # model initial
-    fd = ScrfdFaceDetector(int=INT, conf_thr=0.5, iou_thr=0.1, debug=DEBUG_INFO)
+    fd = ScrfdFaceDetector(int=INT, conf_thr=0.3, iou_thr=0.1, debug=DEBUG_INFO)
     # capture initial
     cap = cv2.VideoCapture(VIDEO_SOURCE)
     # writer initial

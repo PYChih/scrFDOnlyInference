@@ -3,6 +3,7 @@ data/*.zip
 data/WIDER_val/**/*.jpg
 data/**/*.txt
 data/**/*.mat
+data/**/result
 
 # model files
 models/*.zip
